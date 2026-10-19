@@ -1,0 +1,161 @@
+{
+ "case": "quad4",
+ "die_names": [
+  "D1",
+  "D2",
+  "D3",
+  "D4"
+ ],
+ "die_size_x": 0.006,
+ "die_size_y": 0.006,
+ "layers": [
+  {
+   "name": "D1",
+   "kind": "die",
+   "lcf_index": 0,
+   "thickness": 5e-05,
+   "k": 100.0,
+   "cp": 1750000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "D1.flp",
+   "die_index": 0
+  },
+  {
+   "name": "bond1",
+   "kind": "bond",
+   "lcf_index": 1,
+   "thickness": 5e-06,
+   "k": 40.0,
+   "cp": 1600000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "bond.flp"
+  },
+  {
+   "name": "D2",
+   "kind": "die",
+   "lcf_index": 2,
+   "thickness": 5e-05,
+   "k": 100.0,
+   "cp": 1750000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "D2.flp",
+   "die_index": 1
+  },
+  {
+   "name": "bond3",
+   "kind": "bond",
+   "lcf_index": 3,
+   "thickness": 5e-06,
+   "k": 40.0,
+   "cp": 1600000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "bond.flp"
+  },
+  {
+   "name": "D3",
+   "kind": "die",
+   "lcf_index": 4,
+   "thickness": 5e-05,
+   "k": 100.0,
+   "cp": 1750000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "D3.flp",
+   "die_index": 2
+  },
+  {
+   "name": "bond5",
+   "kind": "bond",
+   "lcf_index": 5,
+   "thickness": 5e-06,
+   "k": 40.0,
+   "cp": 1600000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "bond.flp"
+  },
+  {
+   "name": "D4",
+   "kind": "die",
+   "lcf_index": 6,
+   "thickness": 5e-05,
+   "k": 100.0,
+   "cp": 1750000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "D4.flp",
+   "die_index": 3
+  },
+  {
+   "name": "TIM",
+   "kind": "tim",
+   "lcf_index": 7,
+   "thickness": 2e-05,
+   "k": 4.0,
+   "cp": 4000000.0,
+   "size_x": 0.006,
+   "size_y": 0.006,
+   "flp": "tim.flp"
+  },
+  {
+   "name": "spreader",
+   "kind": "spreader",
+   "thickness": 0.001,
+   "k": 400.0,
+   "size_x": 0.012,
+   "size_y": 0.012
+  },
+  {
+   "name": "sink",
+   "kind": "sink",
+   "thickness": 0.0069,
+   "k": 400.0,
+   "size_x": 0.03,
+   "size_y": 0.03
+  }
+ ],
+ "inserts": [],
+ "r_convec": 0.3,
+ "ambient": 318.15,
+ "T_zero_stress": 523.15,
+ "dalpha": 1.3899999999999999e-05,
+ "hotspot": {
+  "rows": 64,
+  "cols": 64,
+  "workdir": "/root/stackem_work/outputs/quad4/e2/hotspot",
+  "lcf": "stack.lcf",
+  "config": "stack.config",
+  "grid_model": "grid"
+ },
+ "mesh": {
+  "thermal": {
+   "hdie": 7.5e-05,
+   "hspr": 0.0005,
+   "hsink": 0.0015,
+   "nz": [
+    4,
+    2,
+    2,
+    5,
+    8
+   ]
+  },
+  "pictures": {
+   "hdie": 0.0003,
+   "hspr": 0.0015,
+   "hsink": 0.003,
+   "nz": [
+    2,
+    1,
+    1,
+    2,
+    2
+   ]
+  }
+ },
+ "note": "layers bottom -> top as in the HotSpot .lcf (layer 0 farthest from the sink); the spreader and the sink are centred on the die stack; convection 1/(r_convec * sink area) on the top face of the sink; inserts = floorplan blocks with their own conductivity inside a layer (ev6: the TSV strips of the TIM layers)"
+}
